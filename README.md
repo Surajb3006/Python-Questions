@@ -59,3 +59,33 @@ Sol)n = int(input().strip())
     elif(n%2==0) and n>20:
         print('Not Weird')    
 
+Q.7)Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given n scores. Store them in a list and find the score of the runner-up.
+Sol) n=int(input())
+    arr = list(map(int, input().split()))
+    arr.sort()
+    a=max(arr)
+    while max(arr)==a:
+        arr.remove(a)
+    print(arr[-1])
+ 
+Q.8)Given the names and grades for each student in a class of N students, store them in a nested list and print the name(s) of any student(s) having the second lowest grade. 
+Sol)    l = []
+second_lowest_names = []
+scores = set()
+
+for _ in range(int(input())):
+    name = input()
+    score = float(input())
+    l.append([name, score])
+    scores.add(score)
+        
+second_lowest = sorted(scores)[1]
+
+for name, score in l:
+    if score == second_lowest:
+        second_lowest_names.append(name)
+
+for name in sorted(second_lowest_names):
+    print(name, end='\n')
+    
+    
