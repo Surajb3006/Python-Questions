@@ -96,3 +96,67 @@ for _ in range(n):
     student_marks[name] = scores
 query_name = input()
 print("{0:.2f}".format(sum(student_marks.get(query_name))/len(student_marks.get(query_name))))
+Q.10)If Give an integer N . Write a program to obtain the sum of the first and last digits of this number.
+Sol)t = int(input())
+ for tc in range(t) :
+    n = int(input())
+    res = n % 10
+    while n >= 10 :
+        n = n // 10
+    res += n
+    print(res)
+    
+Q11)The input begins with two positive integers n k (n, k<=107). The next n lines of input contain one positive integer ti, not greater than 109, each.
+Write a single integer to output, denoting how many integers ti are divisible by k. 
+Sol)(n, k) = map(int, input().split(' '))
+ans = 0
+for i in range(n):
+	x = int(input())
+	if x % k == 0:
+		ans += 1
+print(ans)	
+Q12)Given an Integer N, write a program to reverse it.
+Sol)t = int(input())
+for i in range(t):
+    reverse = 0
+    num = int(input())
+    while(num):
+        remainder = num%10
+        reverse =reverse*10+remainder
+        num = int(num/10)
+    print(reverse)
+Q13)Write a program to check whether a triangle is valid or not, when the three angles of the triangle are the inputs. A triangle is valid if the sum of all the three angles is equal to 180 degrees.
+Sol)n=int(input())
+for i in range(n):
+    x,a,b=map(int,input().split())
+    y=x+a+b
+    if (y==180):
+        print('YES')
+    else:
+        print('NO')
+Q14)Impressed by the power of this number, Kostya has begun to look for occurrences of four anywhere. He has a list of T integers, for each of them he wants to calculate the number of occurrences of the digit 4 in the decimal representation. He is too busy now, so please help him        
+Sol)t = int(input())
+for i in range(t):
+    a=input()
+    print(a.count('4'))
+    # fours = 0
+    # num = int(input())
+    # while(num):
+    #     if(num%10 == 4):
+    #         fours +=1
+    #     num = int(num/10)
+    # print(fours)
+    
+Q15)Chef has to travel to another place. For this, he can avail any one of two cab services.
+The first cab service charges XX rupees.
+The second cab service charges YY rupees.
+Chef wants to spend the minimum amount of money. Which cab service should Chef take?
+Sol)n=int(input())
+for i in range(n):
+    a,b=map(int,input().split())
+    if(a>b):
+        print('SECOND')
+    elif(a==b):
+        print('ANY')
+    else:
+        print('FIRST')
