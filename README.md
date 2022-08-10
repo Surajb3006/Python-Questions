@@ -160,3 +160,69 @@ for i in range(n):
         print('ANY')
     else:
         print('FIRST')
+Q16)There is a hidden word S and a guess word T, both of length 55.
+
+Chef defines a string M to determine the correctness of the guess word. For the ith index:
+If the guess at the ith index is correct, the ithcharacter of M is G.
+If the guess at the ith index is wrong, the ith character of M isB.
+Given the hidden word SS and guess T, determine string M.	
+Sol)n=int(input())
+for i in range(n):
+    x=input()
+    y=input()
+    for j in range(len(x)):
+        if (x[j]==y[j]):
+            print('G',end='')
+        else:
+            print('B',end='')
+    print()
+ Q17)For each input output "wins" if the number is a palindrome and "loses" if not, in a new line.
+ Sol)n=int(input())
+for i in range(n):
+    x=int(input())                                
+    y=x
+    a=0
+    while (x>0):
+        a=(a*10 + (x%10))
+        x=x//10
+    if (a==y):
+        print('wins')
+    else:
+        print('loses')
+	
+OR t = int(input())
+for i in range(t):
+    a = input()
+    k = a[::-1]
+    if a == k:
+        print("wins")
+    else:
+        print("loses")
+	
+Q18)Chef recorded a video explaining his favorite recipe. However, the size of the video is too large to upload on the internet. He wants to compress the video so that it has the minimum size possible.
+
+Chef's video has N frames initially. The value of the ith frame is Ai Chef can do the following type of operation any number of times:
+Choose an index i(1≤i≤N) such that the value of the ith frame is equal to the value of either of its neighbors and remove the ith frame.Find the minimum number of frames Chef can achieve.
+Sol)T=int(input())
+for i in range(T):
+    n=int(input())
+    count=0
+    A=list(map(int,input().split()))
+    l=len(A)
+    for i in range(n-1):
+        p=A[i]
+        r=A[i+1]
+        if p==r:
+            count=count+1  
+        else:
+            continue
+    print(l-count)
+    
+ Q19)Given a positive integer N, MoEngage wants you to determine if it is possible to rearrange the digits of N (in decimal representation) and obtain a multiple of 5.For example, when N=108, we can rearrange its digits to construct 180=36*5 which is a multiple of 5.
+ Sol)for i in range(int(input())):
+    x=int(input())
+    y=input()
+    if "0" in y or "5" in y:
+        print("YES")
+    else:
+        print("NO")
