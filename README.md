@@ -226,3 +226,10 @@ for i in range(T):
         print("YES")
     else:
         print("NO")
+Q20)You are given a string and your task is to swap cases. In other words, convert all lowercase letters to uppercase letters and vice versa.
+Sol)def swap_case(s):
+    return s.swapcase()#change upper to lower case and lower to upper case
+if __name__ == '__main__':
+    s = raw_input()
+    result = swap_case(s)
+    print result
