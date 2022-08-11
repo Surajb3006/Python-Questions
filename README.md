@@ -233,3 +233,37 @@ if __name__ == '__main__':
     s = raw_input()
     result = swap_case(s)
     print result
+Q21)You are given an immutable string, and you want to make changes to it.
+STDIN           Function
+-----           --------
+abracadabra     s = 'abracadabra'
+5 k             position = 5, character = 'k'
+Sol)def mutate_string(string, position, character):
+    l=list(string)
+    l[position]=character
+    string=''.join(l)
+    return string
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+ Q22)In this challenge, the user enters a string and a substring. You have to print the number of times that the substring occurs in the given string. String traversal will take place from left to right, not from right to left.
+ Sol)def count_substring(string, sub_string):
+    count = 0
+    for i in range(len(string)):
+        if string[i:].startswith(sub_string):
+            count += 1
+    return count
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
+    
+Q22)Given a valid (IPv4) IP address, return a defanged version of that IP address.
+A defanged IP address replaces every period "." with "[.]".    
+Sol)class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        return address.replace('.','[.]')
